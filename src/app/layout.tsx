@@ -1,3 +1,4 @@
+import { SITE } from '@/shared/config';
 import { Footer } from '@/widgets/footer';
 import { Header } from '@/widgets/header';
 import type { Metadata } from 'next';
@@ -6,17 +7,45 @@ import './globals.css';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
-	subsets: ['latin'],
+	subsets: ['latin', 'cyrillic'],
 });
 
 const geistMono = Geist_Mono({
 	variable: '--font-geist-mono',
-	subsets: ['latin'],
+	subsets: ['latin', 'cyrillic'],
 });
 
 export const metadata: Metadata = {
-	title: 'Кузовной ремонт',
-	description: 'Кузовной ремонт с гарантией. Оценка по фото за 15 минут.',
+	title: {
+		default: `Кузовной ремонт в ${SITE.cityPrepositional} — Цены от ${SITE.minPrice}₽ | ${SITE.name}`,
+		template: `%s | ${SITE.name}`,
+	},
+	description: `Профессиональный кузовной ремонт и покраска авто в ${SITE.cityPrepositional}. Гарантия 12 месяцев, оценка по фото за 15 минут. Рихтовка, полировка, удаление коррозии. Звоните!`,
+	keywords: [
+		'кузовной ремонт',
+		'покраска авто',
+		'рихтовка',
+		'удаление царапин',
+		'удаление ржавчины',
+		'удаление коррозии',
+		'полировка',
+		SITE.city,
+	],
+	openGraph: {
+		title: `Кузовной ремонт в ${SITE.cityPrepositional} — ${SITE.name}`,
+		description:
+			'Качественное восстановление кузова с гарантией. Оцените стоимость ремонта онлайн!',
+		url: SITE.url,
+		siteName: SITE.name,
+		locale: 'ru_RU',
+		type: 'website',
+		images: '',
+	},
+
+	icons: {
+		icon: '/favicon.ico',
+		apple: '/apple-touch-icon.png',
+	},
 };
 
 export default function RootLayout({
