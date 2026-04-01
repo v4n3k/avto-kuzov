@@ -1,16 +1,13 @@
-'use client';
-
 import Image from 'next/image';
-import { useState } from 'react';
-import { BsChevronDown } from 'react-icons/bs';
 import faqImg from './faq-img.avif';
+import { FaqAccordion } from './FaqAccordion';
 
 type FAQItem = {
 	question: string;
 	answer: string;
 };
 
-const FAQ_DATA: FAQItem[] = [
+const FAQ_ITEMS: FAQItem[] = [
 	{
 		question: 'Как получить точную стоимость ремонта по фото?',
 		answer:
@@ -40,12 +37,6 @@ const FAQ_DATA: FAQItem[] = [
 ];
 
 export const Faq = () => {
-	const [openIndex, setOpenIndex] = useState<number>(0);
-
-	const handleClick = (index: number) => {
-		setOpenIndex(index);
-	};
-
 	return (
 		<section className='bg-gray-50 py-16' id='faq'>
 			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -65,47 +56,7 @@ export const Faq = () => {
 						/>
 						<div className='absolute inset-0 bg-blue-600/5' />
 					</div>
-
-					<div className='space-y-4'>
-						{FAQ_DATA.map((item, index) => {
-							const isOpen = openIndex === index;
-
-							return (
-								<div
-									key={index}
-									className={`border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 ${
-										isOpen
-											? 'shadow-md bg-white border-blue-100'
-											: 'bg-white/50 hover:bg-white'
-									}`}
-								>
-									<button
-										className='w-full text-left px-5 py-5 flex justify-between items-center text-gray-800 font-semibold transition-colors cursor-pointer group'
-										onClick={() => handleClick(index)}
-									>
-										<span className='pr-4 leading-tight'>{item.question}</span>
-										<span
-											className={`text-blue-600 transition-transform duration-300 ${
-												isOpen ? 'rotate-180' : 'rotate-0'
-											}`}
-										>
-											<BsChevronDown size={20} strokeWidth='1' />
-										</span>
-									</button>
-
-									<div
-										className={`transition-all duration-500 ease-in-out overflow-hidden px-5 text-gray-600 leading-relaxed ${
-											isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
-										}`}
-									>
-										<div className='pt-2 border-t border-gray-100'>
-											{item.answer}
-										</div>
-									</div>
-								</div>
-							);
-						})}
-					</div>
+					<FaqAccordion faqItems={FAQ_ITEMS} />
 				</div>
 			</div>
 		</section>

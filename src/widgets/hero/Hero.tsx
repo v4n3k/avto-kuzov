@@ -1,7 +1,7 @@
 import { SITE } from '@/shared/config';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BsArrowRight, BsWhatsapp } from 'react-icons/bs'; // Используем ваши react-icons
+import { BsArrowRight, BsWhatsapp } from 'react-icons/bs';
 import img from './kuzovnoy-remont.webp';
 
 export const Hero = () => {
