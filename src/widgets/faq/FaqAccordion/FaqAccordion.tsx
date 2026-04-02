@@ -3,12 +3,12 @@
 import { useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
 
-type FAQItem = {
+export type FaqItem = {
 	question: string;
 	answer: string;
 };
 
-export const FaqAccordion = ({ faqItems }: { faqItems: FAQItem[] }) => {
+export const FaqAccordion = ({ faqItems }: { faqItems: FaqItem[] }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (

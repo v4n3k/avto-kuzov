@@ -1,13 +1,8 @@
 import Image from 'next/image';
 import faqImg from './faq-img.avif';
-import { FaqAccordion } from './FaqAccordion';
+import { FaqAccordion, FaqItem } from './FaqAccordion';
 
-type FAQItem = {
-	question: string;
-	answer: string;
-};
-
-const FAQ_ITEMS: FAQItem[] = [
+const FAQ_ITEMS: FaqItem[] = [
 	{
 		question: 'Как получить точную стоимость ремонта по фото?',
 		answer:
@@ -47,11 +42,11 @@ export const Faq = () => {
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
 					<div className='relative h-75 lg:h-125 w-full rounded-2xl overflow-hidden shadow-lg'>
 						<Image
+							className='object-cover object-center'
 							src={faqImg}
 							alt='Наш мастер за работой'
 							fill
 							placeholder='blur'
-							objectFit='cover'
 							sizes='(max-width: 1024px) 100vw, 50vw'
 						/>
 						<div className='absolute inset-0 bg-blue-600/5' />

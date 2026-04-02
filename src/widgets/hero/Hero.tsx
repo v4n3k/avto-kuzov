@@ -6,7 +6,10 @@ import img from './kuzovnoy-remont.webp';
 
 export const Hero = () => {
 	return (
-		<section className='relative min-h-[80vh] flex items-center bg-gray-900'>
+		<section
+			className='relative min-h-[80vh] flex items-center bg-gray-900'
+			id='hero'
+		>
 			<div className='absolute inset-0 z-0'>
 				<Image
 					className='object-cover object-center'
@@ -17,7 +20,6 @@ export const Hero = () => {
 					src={img}
 					alt={`Кузовной ремонт в ${SITE.cityPrepositional} - ${SITE.name}`}
 				/>
-
 				<div className='absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-transparent' />
 			</div>
 

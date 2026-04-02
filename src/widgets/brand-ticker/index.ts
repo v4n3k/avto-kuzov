@@ -1,0 +1,1 @@
+export { BrandsTicker } from './BrandTicker';

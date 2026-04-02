@@ -93,10 +93,11 @@ export const PortfolioPreview = () => {
 							>
 								<div className='relative h-64 w-full overflow-hidden'>
 									<Image
+										className='object-cover object-center group-hover:scale-105 transition-transform duration-500'
 										src={img}
 										alt={item.title}
+										placeholder='blur'
 										fill
-										className='object-cover group-hover:scale-105 transition-transform duration-500'
 										sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
 									/>
 									<div className='absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg'>
