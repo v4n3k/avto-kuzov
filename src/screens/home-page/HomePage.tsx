@@ -1,5 +1,6 @@
 import { Advantages } from '@/widgets/advantages';
 import { BrandsTicker } from '@/widgets/brand-ticker';
+import { Calculator } from '@/widgets/calculator';
 import { Faq } from '@/widgets/faq';
 import { Hero } from '@/widgets/hero';
 import { Map } from '@/widgets/map';
@@ -13,6 +14,7 @@ export const HomePage = () => {
 			<PortfolioPreview />
 			<Advantages />
 			<PricePreview />
+			<Calculator />
 			<BrandsTicker />
 			<Faq />
 			<Map />
