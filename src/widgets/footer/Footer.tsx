@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { SITE } from '@/shared/config/site';
 import { TelegramIcon } from '@/shared/ui/icons/TelegramIcon';
 import { WhatsappIcon } from '@/shared/ui/icons/WhatsappIcon';
+import Link from 'next/link';
 
 export const Footer = () => {
 	return (
@@ -25,6 +25,7 @@ export const Footer = () => {
 						<span className='font-semibold mb-2'>Меню</span>
 						<Link
 							href={SITE.pages.services}
+							transitionTypes={['fade', 'slide-up']}
 							className='hover:text-blue-600 transition'
 						>
 							Услуги

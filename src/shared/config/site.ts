@@ -3,7 +3,7 @@ export const SITE = {
 	logoInitials: 'BR',
 	phone: '+1 (234) 567-890',
 	email: 'info@bodyrepair.com',
-	url: 'https://bodyrepair.com',
+	url: 'https://avto-kuzov.vercel.app',
 	city: 'Москва',
 	cityPrepositional: 'Москве',
 	address: 'г. Москва, ул. Примерная, 12',

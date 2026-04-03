@@ -8,7 +8,7 @@ import { PricePreview } from '@/widgets/price-preview';
 
 export const HomePage = () => {
 	return (
-		<div className='flex flex-col gap-24 pt-5'>
+		<div className='flex flex-col gap-24'>
 			<Hero />
 			<Advantages />
 			<PortfolioPreview />
