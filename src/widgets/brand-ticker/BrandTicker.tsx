@@ -19,13 +19,16 @@ export const BrandsTicker = () => {
 	return (
 		<section className='py-20 bg-gray-50' id='brands-ticker'>
 			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-				<div className='max-w-2xl mb-12'>
+				<div className='max-w-2xl mb-10'>
 					<h2 className='text-3xl font-bold text-gray-900 mb-4'>
-						Работаем с любыми марками авто
+						Работаем с любыми марками авто — от бюджетных до премиум
 					</h2>
+					<p className='text-sm font-semibold text-blue-600 mb-3'>
+						Более 500 отремонтированных автомобилей
+					</p>
 					<p className='text-gray-600 text-lg'>
 						Собственный подбор краски и дилерское оборудование позволяют
-						работать с авто любого класса.
+						восстанавливать автомобили любого класса без потери качества.
 					</p>
 				</div>
 
@@ -38,10 +41,10 @@ export const BrandsTicker = () => {
 							<li key={index} className='shrink-0'>
 								<div className='relative h-14 w-32'>
 									<Image
+										className='object-contain'
 										src={brand.logo}
 										alt={`Ремонт кузова ${brand.name}`}
 										fill
-										className='object-contain'
 										sizes='128px'
 										priority
 									/>

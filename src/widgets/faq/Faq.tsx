@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import faqImg from './faq-img.avif';
 import { FaqAccordion, FaqItem } from './FaqAccordion';
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -43,10 +42,9 @@ export const Faq = () => {
 					<div className='relative h-75 lg:h-125 w-full rounded-2xl overflow-hidden shadow-lg'>
 						<Image
 							className='object-cover object-center'
-							src={faqImg}
+							src='/hero/kuzovnoy-remont.webp'
 							alt='Наш мастер за работой'
 							fill
-							placeholder='blur'
 							sizes='(max-width: 1024px) 100vw, 50vw'
 						/>
 						<div className='absolute inset-0 bg-blue-600/5' />

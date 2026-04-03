@@ -8,7 +8,7 @@ export const SITE = {
 	cityPrepositional: 'Москве',
 	address: 'г. Москва, ул. Примерная, 12',
 	addressCoords: [55.751244, 37.618423],
-	year: 2026, // для копирайта
+	year: 2026,
 	minPrice: 2000,
 	socials: {
 		telegram: 'https://t.me/yourusername',
@@ -17,6 +17,7 @@ export const SITE = {
 		// vk: 'https://vk.com/...'
 	},
 	pages: {
+		home: '/',
 		services: '/services',
 		portfolio: '/portfolio',
 		prices: '/prices',

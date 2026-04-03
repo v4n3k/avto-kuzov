@@ -10,8 +10,8 @@ export const HomePage = () => {
 	return (
 		<div className='flex flex-col gap-24'>
 			<Hero />
-			<Advantages />
 			<PortfolioPreview />
+			<Advantages />
 			<PricePreview />
 			<BrandsTicker />
 			<Faq />

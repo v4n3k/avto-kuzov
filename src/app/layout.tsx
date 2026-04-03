@@ -77,17 +77,14 @@ export default function RootLayout({
 				<ViewTransition
 					enter={{
 						default: 'fade-in',
-						'slide-in': 'slide-from-right', // Соответствует transitionTypes={['slide-in']}
 					}}
 				>
 					<Header />
-
 					<main className='flex-1'>
 						<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
 							{children}
 						</div>
 					</main>
-
 					<Footer />
 				</ViewTransition>
 			</body>

@@ -35,7 +35,7 @@ export const FaqAccordion = ({ faqItems }: { faqItems: FaqItem[] }) => {
 									isOpen ? 'rotate-180' : 'rotate-0'
 								}`}
 							>
-								<BsChevronDown size={20} />
+								<BsChevronDown size={20} strokeWidth='1' />
 							</span>
 						</button>
 

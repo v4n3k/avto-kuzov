@@ -2,7 +2,6 @@ import { SITE } from '@/shared/config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsArrowRight, BsWhatsapp } from 'react-icons/bs';
-import img from './kuzovnoy-remont.webp';
 
 export const Hero = () => {
 	return (
@@ -13,12 +12,11 @@ export const Hero = () => {
 			<div className='absolute inset-0 z-0'>
 				<Image
 					className='object-cover object-center'
+					src='/hero/kuzovnoy-remont.webp'
+					alt={`Кузовной ремонт в ${SITE.cityPrepositional} - ${SITE.name}`}
 					priority
 					fill
 					sizes='100vw'
-					placeholder='blur'
-					src={img}
-					alt={`Кузовной ремонт в ${SITE.cityPrepositional} - ${SITE.name}`}
 				/>
 				<div className='absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-transparent' />
 			</div>
