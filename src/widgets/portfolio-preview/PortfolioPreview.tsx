@@ -48,12 +48,15 @@ export const PortfolioPreview = () => {
 							Хотите так же? Запишитесь
 						</Link>
 					</div>
-
 					<Link
 						href={SITE.pages.portfolio}
-						className='flex items-center gap-2 text-blue-600 font-bold'
+						className='inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group'
 					>
-						Смотреть все работы <BsArrowRight />
+						Смотреть все работы
+						<BsArrowRight
+							className='group-hover:translate-x-1 transition-transform'
+							strokeWidth='0.7px'
+						/>
 					</Link>
 				</div>
 

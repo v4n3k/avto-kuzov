@@ -13,43 +13,42 @@ declare global {
 export const Map = () => {
 	const mapRef = useRef<HTMLDivElement>(null);
 
-	const initializeMap = () => {
-		if (window.ymaps && mapRef.current) {
-			window.ymaps.ready(() => {
-				if (mapRef.current?.innerHTML !== '') return;
+	const initMap = () => {
+		const ymaps = window.ymaps;
+		const container = mapRef.current;
 
-				const map = new window.ymaps.Map(mapRef.current, {
-					center: SITE.addressCoords,
-					zoom: 15,
-					controls: ['zoomControl', 'fullscreenControl'],
-				});
+		if (!ymaps || !container) return;
 
-				const placemark = new window.ymaps.Placemark(SITE.addressCoords, {
-					balloonContent: SITE.name,
-				});
+		ymaps.ready(() => {
+			// защита от повторной инициализации
+			if (container.childElementCount > 0) return;
 
-				map.geoObjects.add(placemark);
+			const map = new ymaps.Map(container, {
+				center: SITE.addressCoords,
+				zoom: 15,
+				controls: ['zoomControl', 'fullscreenControl'],
 			});
-		}
+
+			map.geoObjects.add(
+				new ymaps.Placemark(SITE.addressCoords, {
+					balloonContent: SITE.name,
+				}),
+			);
+		});
 	};
 
 	return (
-		<section className='py-16' id='map'>
+		<>
 			<Script
 				src='https://api-maps.yandex.ru/2.1/?lang=ru_RU'
 				strategy='lazyOnload'
-				onLoad={initializeMap}
+				onLoad={initMap}
 			/>
 
-			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-				<h2 className='text-3xl font-bold text-center text-gray-900 mb-8'>
-					Наш сервис на карте
-				</h2>
-				<div
-					ref={mapRef}
-					className='h-96 w-full rounded-md overflow-hidden shadow-md bg-gray-100'
-				/>
-			</div>
-		</section>
+			<div
+				ref={mapRef}
+				className='h-96 w-full rounded-md overflow-hidden shadow-md bg-gray-100'
+			/>
+		</>
 	);
 };

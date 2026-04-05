@@ -56,8 +56,11 @@ export const PricePreview = () => {
 						href={SITE.pages.prices}
 						className='inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group'
 					>
-						Весь прайс-лист
-						<BsArrowRight className='group-hover:translate-x-1 transition-transform' />
+						Смотреть весь прайс-лист
+						<BsArrowRight
+							className='group-hover:translate-x-1 transition-transform'
+							strokeWidth='0.7px'
+						/>
 					</Link>
 				</div>
 

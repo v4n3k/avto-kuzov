@@ -32,6 +32,9 @@ export const PortfolioPreviewCard = ({ item }: PortfolioPreviewCardProps) => {
 					src={showBefore ? item.before : item.after}
 					alt={showBefore ? 'До ремонта' : 'После ремонта'}
 					fill
+					sizes='(max-width: 640px) 100vw,
+	        	(max-width: 1024px) 50vw,
+	       		33vw'
 					className={`object-cover transition-all duration-500
 						${showBefore ? 'brightness-90 scale-100' : 'brightness-100 scale-105'}
 					`}
@@ -46,7 +49,6 @@ export const PortfolioPreviewCard = ({ item }: PortfolioPreviewCardProps) => {
 				</div>
 			</div>
 
-			{/* INFO */}
 			<div className='p-4'>
 				<h3 className='font-semibold text-lg mb-2'>{item.title}</h3>
 
@@ -58,7 +60,6 @@ export const PortfolioPreviewCard = ({ item }: PortfolioPreviewCardProps) => {
 					<span className='font-bold text-black'>{item.price}</span>
 				</div>
 
-				{/* BUTTON */}
 				<button
 					onClick={toggle}
 					className='w-full flex items-center justify-center gap-2 py-2 rounded-lg font-semibold transition cursor-pointer bg-blue-600 text-white hover:bg-blue-700'
