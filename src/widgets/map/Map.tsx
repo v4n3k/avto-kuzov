@@ -20,20 +20,25 @@ export const Map = () => {
 		if (!ymaps || !container) return;
 
 		ymaps.ready(() => {
-			// защита от повторной инициализации
 			if (container.childElementCount > 0) return;
 
 			const map = new ymaps.Map(container, {
 				center: SITE.addressCoords,
 				zoom: 15,
-				controls: ['zoomControl', 'fullscreenControl'],
+				controls: ['zoomControl'],
 			});
 
-			map.geoObjects.add(
-				new ymaps.Placemark(SITE.addressCoords, {
-					balloonContent: SITE.name,
-				}),
+			map.behaviors.disable(['scrollZoom', 'dblClickZoom', 'multiTouch']);
+
+			const placemark = new ymaps.Placemark(
+				SITE.addressCoords,
+				{},
+				{
+					preset: 'islands#blueDotIcon',
+				},
 			);
+
+			map.geoObjects.add(placemark);
 		});
 	};
 
@@ -47,7 +52,7 @@ export const Map = () => {
 
 			<div
 				ref={mapRef}
-				className='h-96 w-full rounded-md overflow-hidden shadow-md bg-gray-100'
+				className='h-96 w-full rounded-lg overflow-hidden shadow-md bg-gray-100'
 			/>
 		</>
 	);

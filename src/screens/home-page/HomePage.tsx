@@ -6,6 +6,7 @@ import { Hero } from '@/widgets/hero';
 import { MapWrapper } from '@/widgets/map';
 import { PortfolioPreview } from '@/widgets/portfolio-preview';
 import { PricePreview } from '@/widgets/price-preview';
+import { ReviewsPreview } from '@/widgets/reviews-preview';
 import { StickyCTA } from '@/widgets/sticky-cta';
 
 export const HomePage = () => {
@@ -14,6 +15,7 @@ export const HomePage = () => {
 			<Hero />
 			<PortfolioPreview />
 			<Advantages />
+			<ReviewsPreview />
 			<PricePreview />
 			<Calculator />
 			<BrandsTicker />

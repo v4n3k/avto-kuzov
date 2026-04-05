@@ -17,7 +17,7 @@ export const BrandsTicker = () => {
 					<h2 className='text-3xl font-bold text-gray-900 mb-4'>
 						Работаем с любыми марками авто — от бюджетных до премиум
 					</h2>
-					<p className='text-sm font-semibold text-blue-600 mb-3'>
+					<p className='text-lg font-semibold text-blue-600 mb-3'>
 						Более 500 отремонтированных автомобилей
 					</p>
 					<p className='text-gray-600 text-lg'>
@@ -29,7 +29,6 @@ export const BrandsTicker = () => {
 				<div className='relative overflow-hidden rounded-2xl border border-gray-100 bg-white py-12 shadow-sm'>
 					<div className='absolute left-0 top-0 bottom-0 z-10 w-30 bg-linear-to-r from-white to-transparent pointer-events-none' />
 					<div className='absolute right-0 top-0 bottom-0 z-10 w-30 bg-linear-to-l from-white to-transparent pointer-events-none' />
-
 					<ul className='flex animate-infinite-scroll w-max items-center gap-10 pr-10 flex-nowrap hover:[animation-play-state:paused]'>
 						{[...BRANDS, ...BRANDS].map((brand, index) => (
 							<li key={index} className='shrink-0'>

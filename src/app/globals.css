@@ -12,6 +12,11 @@
 	--font-mono: var(--font-geist-mono);
 }
 
+html,
+body {
+	overflow-x: clip;
+}
+
 html {
 	scroll-behavior: smooth;
 }

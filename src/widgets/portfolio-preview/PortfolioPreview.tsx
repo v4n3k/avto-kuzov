@@ -5,28 +5,28 @@ import { PortfolioPreviewCard } from './PortfolioPreviewCard';
 
 const PORTFOLIO_ITEMS = [
 	{
-		title: 'Покраска крыла',
-		car: 'Mazda CX-5',
-		price: 'от 9 500 ₽',
-		term: '1 день',
-		before: '/faq/faq-img.avif',
-		after: '/hero/kuzovnoy-remont.webp',
+		title: 'Восстановление ноуската',
+		car: 'Kia Sportage',
+		price: 'от 45 000 ₽',
+		term: '5 дней',
+		before: '/portfolio/sportage-before.jpg',
+		after: '/portfolio/sportage-after.jpg',
 	},
 	{
-		title: 'Дверь и порог',
-		car: 'BMW X5',
+		title: 'Задний бампер и крыло',
+		car: 'Mini Cooper',
 		price: '24 000 ₽',
 		term: '3 дня',
-		before: '/faq/faq-img.avif',
-		after: '/hero/kuzovnoy-remont.webp',
+		before: '/portfolio/mini-before.jpg',
+		after: '/portfolio/mini-after.jpg',
 	},
 	{
-		title: 'Ремонт бампера',
-		car: 'Hyundai Solaris',
-		price: '12 000 ₽',
-		term: '2 дня',
-		before: '/faq/faq-img.avif',
-		after: '/hero/kuzovnoy-remont.webp',
+		title: 'Удаление царапины на бампере',
+		car: 'Infiniti QX50',
+		price: '8 000 ₽',
+		term: '1 день',
+		before: '/portfolio/qx50-before.jpg',
+		after: '/portfolio/qx50-after.jpg',
 	},
 ];
 
@@ -34,15 +34,15 @@ export const PortfolioPreview = () => {
 	return (
 		<section className='py-16 bg-gray-50'>
 			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-				<div className='flex justify-between items-end mb-12'>
+				<div className='flex flex-col justify-between items-start gap-4 mb-12 md:flex-row md:items-end'>
 					<div>
 						<h2 className='text-3xl font-bold mb-4'>До и после ремонта</h2>
-						<p className='text-gray-600'>
+						<p className='text-gray-600 text-lg'>
 							Реальные примеры кузовного ремонта: фото до и после, сроки и
-							стоимость работ
+							стоимость работ.
 						</p>
 						<Link
-							className='text-blue-600 font-semibold hover:text-blue-700 transition'
+							className='text-blue-600 text-lg font-semibold hover:text-blue-700 transition'
 							href={SITE.pages.contacts}
 						>
 							Хотите так же? Запишитесь

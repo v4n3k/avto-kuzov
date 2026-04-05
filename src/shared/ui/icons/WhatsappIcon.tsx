@@ -1,7 +1,10 @@
 import { SITE } from '@/shared/config';
+import { IconBaseProps } from 'react-icons';
 import { FaWhatsapp } from 'react-icons/fa';
 
-export const WhatsappIcon = () => {
+interface WhatsappIconProps extends IconBaseProps {}
+
+export const WhatsappIcon = ({ ...props }: WhatsappIconProps) => {
 	return (
 		<a
 			href={SITE.socials.whatsapp}
@@ -9,7 +12,11 @@ export const WhatsappIcon = () => {
 			rel='noopener noreferrer'
 			aria-label='WhatsApp'
 		>
-			<FaWhatsapp className='w-6 h-6 hover:text-green-600 transition' />
+			<FaWhatsapp
+				className='hover:text-green-600 transition'
+				size={24}
+				{...props}
+			/>
 		</a>
 	);
 };

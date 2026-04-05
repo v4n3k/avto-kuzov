@@ -1,7 +1,10 @@
 import { SITE } from '@/shared/config';
+import { IconBaseProps } from 'react-icons';
 import { FaTelegramPlane } from 'react-icons/fa';
 
-export const TelegramIcon = () => {
+interface TelegramIconProps extends IconBaseProps {}
+
+export const TelegramIcon = ({ ...props }: TelegramIconProps) => {
 	return (
 		<a
 			href={SITE.socials.telegram}
@@ -9,7 +12,11 @@ export const TelegramIcon = () => {
 			rel='noopener noreferrer'
 			aria-label='Telegram'
 		>
-			<FaTelegramPlane className='w-6 h-6 hover:text-blue-500 transition' />
+			<FaTelegramPlane
+				className='hover:text-blue-500 transition'
+				size={24}
+				{...props}
+			/>
 		</a>
 	);
 };

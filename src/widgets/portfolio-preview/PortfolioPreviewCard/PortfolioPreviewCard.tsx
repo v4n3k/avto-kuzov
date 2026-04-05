@@ -50,7 +50,8 @@ export const PortfolioPreviewCard = ({ item }: PortfolioPreviewCardProps) => {
 			</div>
 
 			<div className='p-4'>
-				<h3 className='font-semibold text-lg mb-2'>{item.title}</h3>
+				<h3 className='font-semibold text-lg mb-1'>{item.title}</h3>
+				<span className='mb-2'>{item.car}</span>
 
 				<div className='flex justify-between text-sm text-gray-600 mb-4'>
 					<span className='flex items-center gap-1'>
