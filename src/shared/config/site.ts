@@ -1,7 +1,7 @@
 export const SITE = {
 	name: 'BodyRepair',
 	logoInitials: 'BR',
-	phone: '+1 (234) 567-890',
+	phone: '+7 (999) 555-88-22',
 	email: 'info@bodyrepair.com',
 	url: 'https://avto-kuzov.vercel.app',
 	city: 'Москва',
