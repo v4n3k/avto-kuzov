@@ -43,14 +43,14 @@ export const ReviewsPreview = () => {
 					</a>
 				</div>
 
-				<div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
+				<ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
 					{REVIEWS.map((review, i) => (
-						<div
+						<li
 							key={i}
 							className='flex flex-col p-6 rounded-2xl border border-gray-100 shadow-sm bg-gray-50'
 						>
-							<div className='flex gap-4'>
-								<div className='flex mb-3'>
+							<div className='flex items-center gap-4 mb-3'>
+								<div className='flex'>
 									{Array.from({ length: review.rating }).map((_, i) => (
 										<FaStar
 											key={i}
@@ -59,14 +59,14 @@ export const ReviewsPreview = () => {
 										/>
 									))}
 								</div>
-								<span className='text-sm font-semibold text-gray-900'>
+								<span className='font-semibold text-gray-900'>
 									{review.name}
 								</span>
 							</div>
-							<p className='flex-1 text-gray-700 mb-4'>{review.text}</p>
-						</div>
+							<p className='flex-1 text-gray-700'>{review.text}</p>
+						</li>
 					))}
-				</div>
+				</ul>
 			</div>
 		</section>
 	);
