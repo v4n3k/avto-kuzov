@@ -42,12 +42,19 @@ export const metadata: Metadata = {
 		type: 'website',
 		images: [
 			{
-				url: `${SITE.url}/og.jpg`,
+				url: `/og.jpg`,
 				width: 1200,
 				height: 630,
 				alt: 'Кузовной ремонт авто',
 			},
 		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: `Кузовной ремонт в ${SITE.cityPrepositional} — ${SITE.name}`,
+		description:
+			'Качественное восстановление кузова с гарантией. Оцените стоимость ремонта онлайн!',
+		images: ['/og.jpg'],
 	},
 	icons: {
 		icon: '/favicon.ico',

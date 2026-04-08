@@ -31,7 +31,7 @@ export const Hero = () => {
 					<p className='mt-6 text-xl text-gray-200 drop-shadow-md max-w-xl leading-relaxed'>
 						Уберём коррозию, вмятины, сколы и царапины с точным подбором цвета.
 						Оценим стоимость по фото бесплатно за 15 минут или{' '}
-						<a href='#calculator' className='text-blue-400 hover:underline'>
+						<a href='#calculator' className='text-blue-500 hover:underline'>
 							рассчитайте цену в калькуляторе
 						</a>
 						.

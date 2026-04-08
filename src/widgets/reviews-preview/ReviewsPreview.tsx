@@ -31,7 +31,7 @@ export const ReviewsPreview = () => {
 						Отзывы клиентов
 					</h2>
 					<p className='text-gray-600 text-lg'>
-						Наш рейтинг – 4.9 на основе более 120 честных отзывов.
+						Наш рейтинг – 4.7 на основе более 40 честных отзывов.
 					</p>
 					<a
 						href='https://www.avito.ru/brands/88a8d37735abbc227325c4a91f5e2433#open-reviews-list'
