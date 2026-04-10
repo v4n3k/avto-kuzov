@@ -21,7 +21,7 @@ export const SITE = {
 		services: '/services',
 		portfolio: '/portfolio',
 		prices: '/prices',
-		reviews: '/reviews',
+		reviews: '#reviews',
 		contacts: '/contacts',
 	},
 };

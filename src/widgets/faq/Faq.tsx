@@ -1,6 +1,8 @@
+import { client } from '@/sanity/client';
 import Image from 'next/image';
 import { FaqAccordion, FaqItem } from './FaqAccordion';
 
+/*
 const FAQ_ITEMS: FaqItem[] = [
 	{
 		question: 'Как получить точную стоимость ремонта по фото?',
@@ -28,9 +30,19 @@ const FAQ_ITEMS: FaqItem[] = [
 		answer:
 			'Да, при необходимости мы можем организовать эвакуацию вашего автомобиля.',
 	},
-];
+]; 
+*/
 
-export const Faq = () => {
+async function getFaqs() {
+	return await client.fetch<FaqItem[]>(`*[_type == "faq"] | order(order asc) {
+		question,
+		answer
+	}`);
+}
+
+export const Faq = async () => {
+	const faqItems = await getFaqs();
+
 	return (
 		<section className='bg-gray-50 py-16' id='faq'>
 			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -49,7 +61,7 @@ export const Faq = () => {
 						/>
 						<div className='absolute inset-0 bg-blue-600/5' />
 					</div>
-					<FaqAccordion faqItems={FAQ_ITEMS} />
+					<FaqAccordion faqItems={faqItems} />
 				</div>
 			</div>
 		</section>
