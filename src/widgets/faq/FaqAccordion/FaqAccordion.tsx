@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
+import type { FaqItem } from '../types';
 
-export type FaqItem = {
-	question: string;
-	answer: string;
-};
+interface FaqAccordionProps {
+	faqItems: FaqItem[];
+}
 
-export const FaqAccordion = ({ faqItems }: { faqItems: FaqItem[] }) => {
+export const FaqAccordion = ({ faqItems }: FaqAccordionProps) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (
@@ -27,6 +27,7 @@ export const FaqAccordion = ({ faqItems }: { faqItems: FaqItem[] }) => {
 					>
 						<button
 							className='w-full text-left px-5 py-5 flex justify-between items-center text-gray-800 font-semibold transition-colors cursor-pointer group'
+							aria-expanded={isOpen}
 							onClick={() => setActiveIndex(index)}
 						>
 							<span className='pr-4 leading-tight'>{item.question}</span>
@@ -43,6 +44,7 @@ export const FaqAccordion = ({ faqItems }: { faqItems: FaqItem[] }) => {
 							className={`transition-all duration-500 ease-in-out overflow-hidden px-5 text-gray-600 leading-relaxed ${
 								isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
 							}`}
+							role='region'
 						>
 							<div className='pt-2 border-t border-gray-100'>{item.answer}</div>
 						</div>

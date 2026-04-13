@@ -1,6 +1,7 @@
-import { client } from '@/sanity/client';
+import { sanityFetch } from '@/shared/api/sanity';
 import Image from 'next/image';
-import { FaqAccordion, FaqItem } from './FaqAccordion';
+import { FaqAccordion } from './FaqAccordion';
+import { FaqItem } from './types';
 
 /*
 const FAQ_ITEMS: FaqItem[] = [
@@ -34,10 +35,15 @@ const FAQ_ITEMS: FaqItem[] = [
 */
 
 async function getFaqs() {
-	return await client.fetch<FaqItem[]>(`*[_type == "faq"] | order(order asc) {
-		question,
-		answer
-	}`);
+	return sanityFetch<FaqItem[]>({
+		query: `
+      *[_type == "faq"]
+      | order(order asc, _createdAt asc) {
+        question,
+        answer
+      }
+    `,
+	});
 }
 
 export const Faq = async () => {
@@ -57,7 +63,8 @@ export const Faq = async () => {
 							src='/hero/kuzovnoy-remont.webp'
 							alt='Наш мастер за работой'
 							fill
-							sizes='(max-width: 1024px) 100vw, 50vw'
+							loading='lazy'
+							sizes='(max-width: 1024px) 100vw, 600px'
 						/>
 						<div className='absolute inset-0 bg-blue-600/5' />
 					</div>
