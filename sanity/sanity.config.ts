@@ -10,7 +10,7 @@ import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-import { apiVersion, dataset, projectId } from '@/shared/api/sanity/env';
+import { apiVersion, dataset, projectId } from '@/shared/api/sanity';
 import { schema } from './schema';
 import { structure } from './structure';
 
