@@ -1,5 +1,6 @@
 'use client';
 
+import { SITE } from '@/shared/config';
 import { FaStar } from 'react-icons/fa';
 
 const REVIEWS = [
@@ -34,7 +35,7 @@ export const ReviewsPreview = () => {
 						Наш рейтинг – 4.9 на основе более 120 честных отзывов.
 					</p>
 					<a
-						href='https://www.avito.ru/brands/88a8d37735abbc227325c4a91f5e2433#open-reviews-list'
+						href={SITE.socials.avitoReviews}
 						target='_blank'
 						rel='noopener noreferrer'
 						className='text-blue-600 text-lg font-semibold rounded-md hover:text-blue-700 transition'

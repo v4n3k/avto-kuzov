@@ -13,6 +13,8 @@ export const SITE = {
 	socials: {
 		telegram: 'https://t.me/yourusername',
 		whatsapp: 'https://wa.me/1234567890',
+		avitoReviews:
+			'https://www.avito.ru/brands/88a8d37735abbc227325c4a91f5e2433#open-reviews-list',
 		// instagram: 'https://instagram.com/...',
 		// vk: 'https://vk.com/...'
 	},
@@ -21,7 +23,7 @@ export const SITE = {
 		services: '/services',
 		portfolio: '/portfolio',
 		prices: '/prices',
-		reviews: '#reviews',
+		reviews: '/#reviews',
 		contacts: '/contacts',
 	},
 };

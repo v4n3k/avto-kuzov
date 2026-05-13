@@ -70,7 +70,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL(SITE.url),
 };
 
-export default function RootLayout({
+export default function SiteLayout({
 	children,
 }: {
 	children: React.ReactNode;
